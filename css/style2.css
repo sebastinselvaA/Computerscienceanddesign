@@ -1,0 +1,381 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica' ,sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('images/missedjr.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+  
+  a {
+    color: #000;
+  }
+  
+
+  /* header */
+  
+  .header {
+    box-shadow: 1px 1px 4px 0 rgba(209, 200, 200, 0.544);
+    position:fixed;
+    font-family: "Futura";
+    font-size: 16.5px;
+    background: #131313;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    overflow-y:hidden;
+
+  }
+  
+  .header li a {
+    display: block;
+    padding: 20px;
+    text-decoration:none; 
+    color: #ffffff;
+    
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+    color:rgb(255, 255, 255);
+    font-weight: 600;
+  }
+  .header ul ul {
+    display:none;
+    position:sticky;
+    position:-webkit-sticky;
+    top:60px;
+  } 
+  .header ul li:hover > ul {
+    display:inherit;
+  }
+  .header ul ul li{
+    width:150px;
+    float: none;
+    display:list-item;
+    position:sticky;
+    background-color: #fc4c00;
+    
+  }
+  .header ul ul li{
+    position:sticky;
+    top: -50%;
+    left: 150px;
+  }
+  /*  change this order to change the dropdown symbol */
+  li > a:after { content: '+';
+  }
+  li > a:only-child:after {
+    content: '';
+  }
+  /* menu */
+  .menu{
+    display: inline-block;
+  }
+  .header .menu {
+    
+    max-height: 0;
+    display: flex;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    /* float: right; */
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #fafafa;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height:100vh;
+    max-width: 100vw;
+    display:block;
+    padding-left:40%;
+
+   
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  /* 48em = 768px */
+  
+  @media (min-width: 48em) {
+    .header li {
+      float:right;
+    }
+    .header li a {
+      padding: 20px ;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: 100vh;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+    .header .menu {
+      display: flex;
+      flex-direction:row;
+      
+    }
+  }
+  
+  /* Header Closed */
+
+  
+/*====SLIDES SHOW CONTAINER ======*/
+.mySlides {
+  content-visibility: visible;
+}
+img {
+  vertical-align: middle;
+  width:100%px;
+  height:450px;
+  background-size: cover;  
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 12px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 11px;
+  }
+  h2 {
+    text-align: center;
+    font-size: 30px;
+    border-bottom: 0.5px solid #005eff;
+  }
+ 
+}
+
+/*====CLOSE SLIDES======*/
+
+/*==============CONTACT SECTION====================*/
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding-bottom: 4%;
+  /* background: rgba(20, 20, 20, 0.95); */
+  backdrop-filter: blur(1px) saturate(180%);
+  background-color: rgb(0, 0, 0);
+ 
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+section a {
+  text-decoration: none;
+  /* outline: 1px solid red; */
+}
+
+section a:hover {
+  text-decoration: underline;
+}
+
+.contact-card {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:4px;
+  /* outline: 3px solid rgb(255, 0, 0); */
+  /* outline-offset: 10px; */
+}
+
+.mail {
+  display: flex;
+  align-items: center;
+  gap: 0.5px;
+}
+
+.mail img {
+  width:auto auto;
+}
+
+.profile img {
+  width:220px;
+  height: 160px;
+  border-radius: 15px;
+}
+
+.profile div {
+  display: flex;
+  align-items: center;
+  gap: 0 5px;
+}
+
+.location-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2%;
+  /* outline: 1px solid red;  */
+}
+
+.last-hr {
+  width: 100%;
+}
+
+.map {
+  height: 300px;
+  width: auto;
+  border-radius: 25px;
+}
+
+.address {
+  text-align: center;
+}
+
+.address span {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.social-handles {
+  display: grid;
+  grid-gap: 5px;
+}
+
+@media (max-width: 800px) {
+  section {
+    align-items: center;
+    flex-direction: column;
+    padding: 7% 9%;
+    margin-top: 20%;
+    padding-top: 20%;
+  }
+  .mail img {
+    display: flex;
+    width: auto;
+  }
+  .profile img {
+    display: flex;
+    width: 10%;
+  }
+
+  .social-handles {
+    display: flex;
+    justify-content: space-between;
+  }
+}
